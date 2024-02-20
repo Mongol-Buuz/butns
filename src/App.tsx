@@ -4,7 +4,7 @@ import handsPic from "./assets/handsholding.png";
 import Row from "./components/Row";
 import Col from "./components/Col";
 import { toast, ToastContainer } from "react-toastify";
-import {Button} from "@mui/material";
+import {Button, Typography} from "@mui/material";
 import { useState } from "react";
 import Congrats from "./components/Congrats.tsx";
 import Modal from "react-modal";
@@ -13,18 +13,20 @@ export default function App() {
     const defaultButtonPosition = { top: 5, left: 70 };
     const [isModalOpen, setModalOpen] = useState(false);
 
+    const happyStr:string = "Happy Happy Happy"
+
     const handleClick = () => {
         setModalOpen(true);
-        toast.success("Happy Happy Happy", { position: "top-right" });
-        toast.success("Happy Happy Happy", { position: "top-right" });
-        toast.success("Happy Happy Happy", { position: "top-left" });
-        toast.success("Happy Happy Happy", { position: "top-left" });
-        toast.success("Happy Happy Happy", { position: "bottom-left" });
-        toast.success("Happy Happy Happy", { position: "bottom-left" });
-        toast.success("Happy Happy Happy", { position: "bottom-right" });
-        toast.success("Happy Happy Happy", { position: "bottom-right" });
-        toast.success("Happy Happy Happy", { position: "bottom-center" });
-        toast.success("Happy Happy Happy", { position: "top-center" });
+        toast.success( happyStr, { position: "top-right" });
+        toast.success( happyStr, { position: "top-right" });
+        toast.success( happyStr, { position: "top-left" });
+        toast.success( happyStr, { position: "top-left" });
+        toast.success( happyStr, { position: "bottom-left" });
+        toast.success( happyStr, { position: "bottom-left" });
+        toast.success( happyStr, { position: "bottom-right" });
+        toast.success( happyStr, { position: "bottom-right" });
+        toast.success( happyStr, { position: "bottom-center" });
+        toast.success( happyStr, { position: "top-center" });
     };
 
     const closeModal = () => {
@@ -34,7 +36,18 @@ export default function App() {
     return (
         <div>
             <Col style={{ alignItems: "center" }}>
-                <p>Lets go on a date</p>
+                <Typography variant="caption"
+                            style={{
+                                textAlign: "center",
+                                marginBottom: '10px',
+                                fontWeight: "bold",
+                                fontSize: "20px",
+                                color: "black",
+                                paddingBottom: '5px',
+                                borderRadius: '25px', boxShadow: "0px 0px 30px rgba(99, 125, 170, 0.5)", padding: 15
+                            }}>
+                Lets go on a date?
+                </Typography>
                 <img src={handsPic} alt="handsHold" />
                 <Row style={{ padding: "5px", position: "relative" }}>
                     <Button
